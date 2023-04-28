@@ -1,0 +1,9 @@
+Create docker image:- docker build -t react-docker .
+remove docker image:- docker image rm ID
+list of docker image: docker image ls
+Create docker contaienr with volume mount:- docker run -v $(pwd):/app -d --name react-docker-app -p 3000:3000 react-docker
+Env with docker container:- docker run -e CHOKIDAR_USEPOLLING=true -d --name react-docker-app -p 3000:3000 react-docker
+env file with docker container:- docker run --env-file ./.env.local -v $(pwd):/app -d --name react-docker-app -p 3000:3000 react-docker
+Show the running docker container:- docker ps
+Remove docker container:- docker rm react-docker-app -f
+log into the container code:- docker exec -t react-docker-app bash
